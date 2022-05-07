@@ -80,7 +80,7 @@ button {
 
 .menu,
 body.menu-aberto .header .abrir,
-body.menu-aberto #conteudo-principal,
+body.menu-aberto #conteudoPrincipal,
 body.menu-aberto #servicos,
 body.menu-aberto #sobre,
 body.menu-aberto #contato,
@@ -231,7 +231,7 @@ body.menu-aberto .fechar {
 
 /* Conteúdo Principal */
 
-#conteudo-principal::before {
+#conteudoPrincipal::before {
   content: '';
   position: absolute;
   z-index: 0;
@@ -242,7 +242,7 @@ body.menu-aberto .fechar {
   background-color: var(--brand-color-light);
 }
 
-#conteudo-principal {
+#conteudoPrincipal {
   padding-top: calc(4.1rem + var(--altura-nav));
 }
 
@@ -449,11 +449,24 @@ body.menu-aberto .fechar {
 
 /* Responsivo */
 
-@media only screen and (min-width: 1028px) {
+@media only screen and (min-width: 1024px) {
   /* Estilos Gerais */
 
   .container {
     width: min(112rem, 100%);
+  }
+
+  #servicos,
+  #sobre,
+  #contato {
+    padding-block: 16rem;
+  }
+
+  #servicos h2,
+  #sobre h2,
+  #contato h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
   }
 
   /* Cabeçalho */
@@ -513,7 +526,8 @@ body.menu-aberto .fechar {
     transition: width 0.3s;
   }
 
-  header#header .menu-links li a:hover::after {
+  header#header .menu-links li a:hover::after,
+  header#header .menu-links li a.linkAtivo::after {
     width: 100%;
     padding: 0 0.8rem;
   }
@@ -564,57 +578,131 @@ body.menu-aberto .fechar {
 
   /* Conteúdo Principal */
 
-  #conteudo-principal::before {
-    height: calc(92% - var(--altura-nav));
+  #conteudoPrincipal::before {
+    height: calc(96.5% - var(--altura-nav));
   }
 
-  #conteudo-principal {
+  #conteudoPrincipal {
     padding-top: var(--altura-nav);
   }
 
-  #conteudo-principal .container {
+  #conteudoPrincipal .container {
     display: grid;
     grid-template-columns: 1fr 42rem;
     column-gap: 5.1rem;
   }
 
-  #conteudo-principal .introducao-infos {
+  #conteudoPrincipal .introducao-infos {
     text-align: left;
     align-self: center;
   }
 
-  #conteudo-principal .introducao-infos h1 {
+  #conteudoPrincipal .introducao-infos h1 {
     margin-bottom: 2.4rem;
     font-size: 5.2rem;
     line-height: 130%;
   }
 
-  #conteudo-principal .introducao-infos p {
+  #conteudoPrincipal .introducao-infos p {
     margin-bottom: 3.2rem;
   }
 
-  #conteudo-principal .btn {
+  #conteudoPrincipal .btn {
     margin-inline: 0;
   }
 
-  #conteudo-principal .introducao-imagem {
+  #conteudoPrincipal .introducao-imagem {
     position: relative;
     top: 2rem;
   }
 
-  #conteudo-principal .dados-empresa {
+  #conteudoPrincipal .dados-empresa {
     grid-column: 1 / -1;
     flex-direction: row;
     gap: 0;
+    margin-bottom: 0;
     padding: 6rem;
   }
 
-  #conteudo-principal .dados-empresa li {
+  #conteudoPrincipal .dados-empresa li {
     flex: 1;
   }
 
-  #conteudo-principal .dados-empresa li + li {
+  #conteudoPrincipal .dados-empresa li + li {
     border-left: 1px solid rgba(0, 133, 111, 0.5);
+  }
+
+  /* Serviços */
+
+  #servicos h2 {
+    max-width: 18ch;
+    margin-inline: auto;
+  }
+
+  .vantagens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+
+  /* Sobre */
+
+  #sobre .container {
+    display: grid;
+    grid-template-columns: 48rem 1fr;
+    gap: 6.7rem;
+  }
+
+  #sobre .sobre-infos {
+    order: 1;
+    align-self: center;
+  }
+
+  #sobre .sobre-infos h2 {
+    max-width: 15ch;
+  }
+
+  #sobre .sobre-infos p {
+    margin-bottom: 0;
+  }
+
+  #sobre .sobre-imagem img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Contato */
+
+  #contato .container {
+    display: grid;
+    grid-template-columns: 1fr 57.5rem;
+    align-items: center;
+    gap: 14.1rem;
+  }
+
+  #contato .contato-infos {
+    margin-bottom: 0;
+  }
+
+  #contato .contato-infos .btn {
+    margin-top: 4rem;
+    margin-bottom: 0;
+  }
+
+  /* Rodapé */
+
+  #footer {
+    padding-block: 8rem;
+  }
+
+  #footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #footer .copy {
+    margin-bottom: 0;
   }
 }
 

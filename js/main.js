@@ -7,6 +7,41 @@ window.addEventListener('scroll', emScroll)
 function emScroll() {
   mostrarNavEmScroll()
   mostrarBtnEmScroll()
+  ativarMenuNaSecaoAtual(conteudoPrincipal)
+  ativarMenuNaSecaoAtual(servicos)
+  ativarMenuNaSecaoAtual(sobre)
+  ativarMenuNaSecaoAtual(contato)
+}
+
+function ativarMenuNaSecaoAtual(section) {
+  // Linha alvo
+  const targetLine = scrollY + innerHeight / 2
+
+  // Verificar se a seção passsou da linha
+  // Quais dados eu vou precisar?
+
+  const sectionTop = section.offsetTop
+  const sectionHeight = section.offsetHeight
+
+  const sectionTopoPassouOuChegouNaLinha = targetLine >= sectionTop
+
+  const sectionTerminaEm = sectionTop + sectionHeight
+
+  const sectionBasePassouDaLinha = sectionTerminaEm < targetLine
+
+  // limites da seção
+  const sectionLimites =
+    sectionTopoPassouOuChegouNaLinha && !sectionBasePassouDaLinha
+
+  const sectionId = section.getAttribute('id')
+  const menuElement = document.querySelector(
+    `.menu-links a[href*=${sectionId}]`
+  )
+
+  menuElement.classList.remove('linkAtivo')
+  if (sectionLimites) {
+    menuElement.classList.add('linkAtivo')
+  }
 }
 
 function mostrarNavEmScroll() {
@@ -40,7 +75,7 @@ ScrollReveal({
   distance: '10rem',
   duration: 500
 }).reveal(`
-  #conteudo-principal,
+  #conteudoPrincipal,
   #servicos,
   #servicos h4,
   #servicos h2,
