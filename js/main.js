@@ -38,9 +38,10 @@ function ativarMenuNaSecaoAtual(section) {
     `.menu-links a[href*=${sectionId}]`
   )
 
-  menuElement.classList.remove('linkAtivo')
   if (sectionLimites) {
     menuElement.classList.add('linkAtivo')
+  } else {
+    menuElement.classList.remove('linkAtivo')
   }
 }
 
