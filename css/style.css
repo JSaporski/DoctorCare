@@ -532,7 +532,8 @@ body.menu-aberto .fechar {
     padding: 0 0.8rem;
   }
 
-  header#header .menu-links li a:hover {
+  header#header .menu-links li a:hover,
+  header#header .menu-links li a.linkAtivo {
     font-weight: 700;
   }
 
