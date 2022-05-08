@@ -9,6 +9,7 @@ function emScroll() {
   mostrarBtnEmScroll()
   ativarMenuNaSecaoAtual(conteudoPrincipal)
   ativarMenuNaSecaoAtual(servicos)
+  ativarMenuNaSecaoAtual(depoimentos)
   ativarMenuNaSecaoAtual(sobre)
   ativarMenuNaSecaoAtual(contato)
 }
@@ -95,6 +96,11 @@ ScrollReveal({
   duration: 500
 }).reveal(`
   .dados-empresa,
+  #depoimentos,
+  #depoimentos h4,
+  #depoimentos h2,
+  #depoimentos p,
+  #depoimentos div,
   #sobre,
   #sobre h4,
   #sobre h2,

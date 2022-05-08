@@ -82,6 +82,7 @@ button {
 body.menu-aberto .header .abrir,
 body.menu-aberto #conteudoPrincipal,
 body.menu-aberto #servicos,
+body.menu-aberto #depoimentos,
 body.menu-aberto #sobre,
 body.menu-aberto #contato,
 body.menu-aberto #footer {
@@ -181,7 +182,7 @@ body.menu-aberto .container .menu-nav svg path {
 
 .btn-menu {
   display: inline-block;
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
   padding: 1.6rem 3.2rem;
   font-size: 1.8rem;
   font-weight: bold;
@@ -355,6 +356,63 @@ body.menu-aberto .fechar {
   color: var(--gray-paragraph);
 }
 
+/* Depoimentos */
+
+#depoimentos {
+  background-color: var(--white);
+}
+
+#depoimentos h2 {
+  margin-bottom: 2.4rem;
+}
+
+#depoimentos p {
+  margin-bottom: 2.4rem;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: var(--gray-paragraph);
+}
+
+#depoimentos .container > p {
+  margin-bottom: 6.7rem;
+}
+
+#depoimentos .depoimento-card {
+  padding: 3.2rem;
+  text-align: left;
+  border-radius: 0.4rem;
+  background-color: var(--brand-bg);
+}
+
+#depoimentos .depoimento-card + .depoimento-card {
+  margin-top: 3.2rem;
+}
+
+#depoimentos .depoimento-card svg path {
+  fill: var(--brand-color);
+}
+
+#depoimentos .depoimento-card p {
+  margin-block: 2rem;
+}
+
+#depoimentos .card-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+#depoimentos .card-profile img {
+  width: 4.2rem;
+}
+
+#depoimentos .card-profile span {
+  font-size: 1.6rem;
+  line-height: 175%;
+  font-weight: 700;
+  color: var(--brand-color);
+}
+
 /* Sobre */
 
 #sobre {
@@ -503,7 +561,7 @@ body.menu-aberto .fechar {
   }
 
   header#header .menu {
-    width: 61.7%;
+    width: 72.5%;
   }
 
   header#header .menu-links {
@@ -584,13 +642,13 @@ body.menu-aberto .fechar {
   }
 
   #conteudoPrincipal {
-    padding-top: var(--altura-nav);
+    padding-top: var(--altura-nav + 5rem);
   }
 
   #conteudoPrincipal .container {
     display: grid;
     grid-template-columns: 1fr 42rem;
-    column-gap: 5.1rem;
+    column-gap: 4.8rem;
   }
 
   #conteudoPrincipal .introducao-infos {
@@ -644,6 +702,33 @@ body.menu-aberto .fechar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
+  }
+
+  /* Depoimentos */
+
+  #depoimentos {
+    text-align: left;
+    padding-block: 16rem;
+  }
+
+  #depoimentos .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+  }
+
+  #depoimentos h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
+
+  #depoimentos p {
+    max-width: 40ch;
+    margin-bottom: 0;
+  }
+
+  #depoimentos .depoimento-card + .depoimento-card {
+    margin-top: 0;
   }
 
   /* Sobre */
