@@ -581,8 +581,8 @@ body.menu-aberto .fechar {
     width: 0%;
     height: 0.2rem;
     background-color: var(--brand-color);
-    transition: width 0.3s;
-    transition: bottom 0.3s;
+    transition: width bottom;
+    transition-duration: 0.3s;
   }
 
   header#header .menu-links li a:hover::after,
