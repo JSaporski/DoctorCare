@@ -125,8 +125,9 @@ body.menu-aberto .container .menu-nav svg path {
   z-index: 1;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
   display: flex;
+  align-items: center;
+  transform: translateX(-50%);
   height: var(--altura-nav);
 }
 
@@ -136,7 +137,7 @@ body.menu-aberto .container .menu-nav svg path {
   animation: diminuirTamanhoMenu 0.3s ease-out forwards;
 }
 
-.header .container {
+.header .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -205,13 +206,22 @@ body.menu-aberto .container .menu-nav svg path {
 }
 
 body.menu-aberto {
-  overflow: hidden;
   animation: animarMenu ease-out 0.3s;
+}
+
+body.menu-aberto .header.scroll {
+  animation: none;
 }
 
 body.menu-aberto .header {
   position: relative;
+  height: 100vh;
+  display: block;
   background-color: var(--brand-color);
+}
+
+body.menu-aberto .header .container {
+  display: block;
 }
 
 body.menu-aberto .menu {
@@ -220,14 +230,20 @@ body.menu-aberto .menu {
   left: 0;
   display: block;
   width: 100%;
-  height: calc(100vh - var(--altura-nav));
   margin-top: var(--altura-nav);
-  padding-top: 6rem;
+  padding-block: 6rem;
   background-color: var(--brand-color);
 }
 
 body.menu-aberto .fechar {
   display: block;
+}
+
+body.menu-aberto .navbar-container {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Conteúdo Principal */
@@ -603,6 +619,12 @@ body.menu-aberto .fechar {
     color: initial;
     background-color: initial;
     transform: initial;
+  }
+
+  header#header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   header#header .container .menu-nav,
