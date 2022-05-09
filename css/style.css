@@ -2,13 +2,13 @@
 
 :root {
   font-size: 62.5%;
-  --matiz: 200;
+  --matiz: 0;
   --altura-nav: 7.2rem;
-  --brand-color: hsl(var(--matiz), 100%, 26%);
-  --brand-color-light: hsl(calc(var(--matiz) - 22), 23%, 89%);
-  --brand-color-light-02: hsl(var(--matiz), 14%, 97%);
+  --brand-color: hsl(var(--matiz), 65%, 48%);
+  --brand-color-light: hsl(var(--matiz), 100%, 95%);
+  --brand-color-light-02: hsl(var(--matiz), 100%, 98%);
   --brand-bg: hsl(39, 100%, 97%);
-  --brand-color-hover: hsl(var(--matiz), 100%, 14%);
+  --brand-color-hover: hsl(var(--matiz), 72%, 30%);
   --gray-headline: hsl(210, 11%, 15%);
   --gray-paragraph: hsl(210, 9%, 31%);
   --white: hsl(0, 0%, 100%);
@@ -239,7 +239,7 @@ body.menu-aberto .fechar {
   top: 0;
   right: 0;
   width: 100%;
-  height: calc(90% - var(--altura-nav));
+  height: 84.5%;
   background-color: var(--brand-color-light);
 }
 
@@ -337,7 +337,11 @@ body.menu-aberto .fechar {
   display: inline-block;
   border-radius: 50%;
   padding: 0.4rem 0.4rem 0;
-  background: var(--brand-color-light);
+  background-color: var(--brand-color-light);
+}
+
+.vantagens-item .icone svg path {
+  stroke: var(--brand-color);
 }
 
 .vantagens-item h3 {
@@ -360,6 +364,7 @@ body.menu-aberto .fechar {
 
 #depoimentos {
   background-color: var(--white);
+  padding-bottom: 0;
 }
 
 #depoimentos h2 {
@@ -413,9 +418,56 @@ body.menu-aberto .fechar {
   color: var(--brand-color);
 }
 
+#depoimentos h3 {
+  margin: 8rem 0 4.8rem;
+  font-size: 2.4rem;
+}
+
+#depoimentos .empresas-parceiras {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+#depoimentos .banner-empresa {
+  position: relative;
+  bottom: -12rem;
+  padding: 3.2rem;
+  border-radius: 1rem;
+  background-color: var(--brand-color);
+}
+
+#depoimentos .banner-empresa h3 {
+  margin-top: 0;
+  font-size: 3rem;
+  color: var(--white);
+}
+
+#depoimentos .banner-empresa .btn {
+  margin-bottom: 0;
+  color: var(--brand-color);
+  background-color: var(--white);
+}
+
+#depoimentos .banner-empresa .btn svg path {
+  fill: var(--brand-color);
+}
+
+#depoimentos .banner-empresa .btn:hover {
+  background-color: var(--brand-color-hover);
+  color: var(--white);
+}
+
+#depoimentos .banner-empresa .btn:hover svg path {
+  fill: var(--white);
+}
+
 /* Sobre */
 
 #sobre {
+  position: relative;
+  z-index: -1;
+  padding-top: calc(10rem * 3);
   text-align: left;
   background-color: var(--brand-bg);
 }
@@ -506,6 +558,17 @@ body.menu-aberto .fechar {
 }
 
 /* Responsivo */
+
+@media only screen and (max-width: 379px) {
+  /* Esse '@media' é apenas um ajuste para que o SVG do botão não diminua de tamanho e fique mais       apresentável em dispositivos de menor resolução. */
+  #depoimentos .banner-empresa .btn {
+    flex-direction: column;
+  }
+
+  #depoimentos .banner-empresa .btn svg {
+    order: 2;
+  }
+}
 
 @media only screen and (min-width: 1024px) {
   /* Estilos Gerais */
@@ -639,7 +702,7 @@ body.menu-aberto .fechar {
   /* Conteúdo Principal */
 
   #conteudoPrincipal::before {
-    height: calc(96.5% - var(--altura-nav));
+    height: calc(88%);
   }
 
   #conteudoPrincipal {
@@ -689,7 +752,7 @@ body.menu-aberto .fechar {
   }
 
   #conteudoPrincipal .dados-empresa li + li {
-    border-left: 1px solid rgba(0, 133, 111, 0.5);
+    border-left: 1px solid var(--brand-color);
   }
 
   /* Serviços */
@@ -709,10 +772,11 @@ body.menu-aberto .fechar {
 
   #depoimentos {
     text-align: left;
-    padding-block: 16rem;
+    padding-top: 16rem;
+    padding-bottom: 4rem;
   }
 
-  #depoimentos .container {
+  #depoimentos .container:first-child {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3.2rem;
@@ -732,7 +796,48 @@ body.menu-aberto .fechar {
     margin-top: 0;
   }
 
+  #depoimentos .container:last-child {
+    margin-top: 16rem;
+  }
+
+  #depoimentos h3 {
+    margin: 0 0 4.8rem;
+    text-align: center;
+  }
+
+  #depoimentos .empresas-parceiras {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #depoimentos .banner-empresa {
+    bottom: -19.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 10rem;
+    border-radius: 1rem;
+    background-color: var(--brand-color);
+  }
+
+  #depoimentos .banner-empresa h3 {
+    width: 60%;
+    margin-bottom: 0;
+    font-size: 4rem;
+    text-align: left;
+  }
+
+  #depoimentos .banner-empresa .btn {
+    margin-inline: 0;
+  }
+
   /* Sobre */
+
+  #sobre {
+    padding-top: calc(16rem * 2);
+  }
 
   #sobre .container {
     display: grid;

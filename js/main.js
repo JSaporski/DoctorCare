@@ -87,7 +87,11 @@ ScrollReveal({
   #contato h2,
   .contato-infos,
   #contato .btn,
-  #contato div img
+  #contato div img,
+  #footer,
+  #footer a,
+  .copy,
+  #footer .social-media
 `)
 
 ScrollReveal({
@@ -101,13 +105,12 @@ ScrollReveal({
   #depoimentos h2,
   #depoimentos p,
   #depoimentos div,
+  #depoimentos > h3,
+  #depoimentos .empresas-parceiras,
+  #depoimentos .banner-empresa,
   #sobre,
   #sobre h4,
   #sobre h2,
   #sobre p,
-  #sobre div,
-  #footer,
-  #footer a,
-  .copy,
-  #footer .social-media
+  #sobre div
 `)
