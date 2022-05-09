@@ -483,12 +483,14 @@
       </div>
     </article>
 
-    <article id="depoimentos">
+    <article id="depoimentos" aria-labelledby="depoimentos-heading">
       <div class="container">
         <div class="depoimentos-infos">
           <h4>Depoimentos</h4>
 
-          <h2>O que os clientes dizem sobre o DoctorCare</h2>
+          <h2 id="depoimentos-heading">
+            O que os clientes dizem sobre o DoctorCare
+          </h2>
 
           <p>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
@@ -599,8 +601,8 @@
         </div>
       </div>
 
-      <div class="container">
-        <h3>Empresas que confiam</h3>
+      <div class="container" aria-labelledby="empresas-heading">
+        <h3 id="empresas-heading">Empresas que confiam</h3>
 
         <ul class="empresas-parceiras">
           <li class="facebook">
@@ -1050,7 +1052,12 @@
       </div>
     </footer>
 
-    <a id="btnTopo" class="btn-topo" href="#conteudoPrincipal">
+    <a
+      aria-label="Botão para voltar ao topo"
+      id="btnTopo"
+      class="btn-topo"
+      href="#conteudoPrincipal"
+    >
       <svg
         width="40"
         height="40"
