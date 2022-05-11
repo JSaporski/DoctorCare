@@ -7,6 +7,7 @@
   --brand-color: hsl(var(--matiz), 65%, 48%);
   --brand-color-light: hsl(var(--matiz), 100%, 95%);
   --brand-color-light-02: hsl(var(--matiz), 100%, 98%);
+  --brand-color-light-03: hsl(var(--matiz), 80%, 78%);
   --brand-bg: hsl(39, 100%, 97%);
   --brand-color-hover: hsl(var(--matiz), 72%, 30%);
   --gray-headline: hsl(210, 11%, 15%);
@@ -93,6 +94,11 @@ body.menu-aberto #footer {
 
 #btnTopo circle {
   fill: var(--brand-color);
+  transition: 0.3s ease-out;
+}
+
+#btnTopo:hover circle {
+  fill: var(--brand-color-hover);
 }
 
 .contato-infos svg path {
@@ -175,10 +181,11 @@ body.menu-aberto .container .menu-nav svg path {
   line-height: 3.1rem;
   font-weight: 700;
   color: var(--white);
+  transition: 0.3s ease-out;
 }
 
 .menu-links a:hover {
-  color: var(--brand-color-light);
+  color: var(--brand-color-light-03);
 }
 
 .btn-menu {
@@ -203,6 +210,14 @@ body.menu-aberto .container .menu-nav svg path {
   display: flex;
   justify-content: center;
   gap: 3.2rem;
+}
+
+.social-media li a svg path {
+  transition: stroke 0.3s ease-out;
+}
+
+.social-media li a svg:hover path {
+  stroke: var(--brand-color-light-03);
 }
 
 body.menu-aberto {
@@ -425,6 +440,7 @@ body.menu-aberto .navbar-container {
 
 #depoimentos .card-profile img {
   width: 4.2rem;
+  border-radius: 50%;
 }
 
 #depoimentos .card-profile span {
@@ -862,6 +878,10 @@ body.menu-aberto .navbar-container {
     margin-inline: 0;
   }
 
+  #depoimentos .banner-empresa .btn svg path {
+    transition: 0.3s ease-out;
+  }
+
   /* Sobre */
 
   #sobre {
@@ -890,6 +910,7 @@ body.menu-aberto .navbar-container {
   #sobre .sobre-imagem img {
     height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
   }
 
   /* Contato */
@@ -908,6 +929,16 @@ body.menu-aberto .navbar-container {
   #contato .contato-infos .btn {
     margin-top: 4rem;
     margin-bottom: 0;
+  }
+
+  #contato .contato-imagem {
+    align-self: stretch;
+  }
+
+  #contato .contato-imagem img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
   }
 
   /* Rodapé */
